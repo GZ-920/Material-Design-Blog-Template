@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fffbfe" />
+  <meta name="description" content="关于初源博文模板" />
+  <title>关于 · 初源博文</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="about">
+  <div class="background-layer" aria-hidden="true"></div>
+
+  <header class="top-app-bar" data-nav>
+    <div class="top-app-bar__inner wrap">
+      <a href="index.html" class="brand">
+        <img class="brand__logo" src="assets/icon.png" alt="" />
+        <span class="brand__text"><strong data-site-name>初源博文</strong><small data-site-tagline>SEEKING THE TRUTH</small></span>
+      </a>
+      <nav class="top-nav" aria-label="主导航">
+        <a class="nav-destination" href="index.html">首页</a>
+        <a class="nav-destination is-active" href="about.html">关于</a>
+        <button class="icon-button" data-theme-toggle aria-label="切换主题"><span data-theme-icon aria-hidden="true"></span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="about-page wrap">
+    <section class="about-hero" data-reveal>
+      <div class="about-hero__copy">
+        <p class="eyebrow">关于</p>
+        <h1 class="display-medium">Material 3 博客模板<br />简洁、动态、可配置。</h1>
+        <p class="body-large">这是一个基于 Material 3 设计语言的静态博客模板，适合用于个人博客、作品展示与技术文章发布。</p>
+      </div>
+      <div class="about-hero__mark" aria-hidden="true">
+        <img src="assets/icon.png" alt="" />
+      </div>
+    </section>
+
+    <section class="about-section" data-reveal>
+      <div class="about-section__heading">
+        <p class="eyebrow">功能</p>
+        <h2 class="headline-medium">模板功能</h2>
+      </div>
+      <dl class="spec-list">
+        <div><dt>首页</dt><dd>动态头图轮播<small>支持自动取色与排序</small></dd></div>
+        <div><dt>文章</dt><dd>Markdown · 主题色 · 目录<small>支持文内头图</small></dd></div>
+        <div><dt>管理</dt><dd>Admin 在线管理<small>无需直接修改源码</small></dd></div>
+      </dl>
+    </section>
+
+    <div class="about-grid">
+      <section class="filled-card" data-reveal>
+        <p class="eyebrow">身份</p>
+        <h2 class="headline-small">一些身份</h2>
+        <div class="chip-row roomy"><span class="chip">小UP</span><span class="chip">美术生</span><span class="chip">信息技术生</span><span class="chip">高中生</span></div>
+      </section>
+      <section class="filled-card filled-card--accent" data-reveal>
+        <p class="eyebrow">使用</p>
+        <h2 class="headline-small">开始配置</h2>
+        <p class="body-medium contact-copy">打开 Admin 页面即可管理首页头图、公告和文章。具体配置方法见 README。</p>
+        <div class="button-row" data-social-links></div>
+      </section>
+    </div>
+  </main>
+
+  <button class="fab" data-back-to-top hidden aria-label="返回顶部" title="返回顶部"><span class="symbol symbol--arrow-up" aria-hidden="true"></span></button>
+  <footer class="site-footer"><div class="wrap site-footer__inner"><span class="body-small" data-copyright></span><div class="footer-links" data-footer-social></div></div></footer>
+  <script type="module" src="assets/main.js"></script>
+</body>
+</html>
