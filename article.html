@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  ⁠<meta name="referrer" content="no-referrer">⁠
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fffbfe" />
+  <meta name="description" content="我的博客文章" />
+  <title>文章 · 我的博客</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="article">
+  <div class="background-layer" aria-hidden="true"></div>
+  <div class="reading-progress" data-reading-progress></div>
+
+  <header class="top-app-bar" data-nav>
+    <div class="top-app-bar__inner wrap">
+      <a href="index.html" class="brand"><img class="brand__logo" src="assets/icon.png" data-logo-source="assets/icon.png" alt="" /><span class="brand__text"><strong data-site-name>我的博客</strong><small data-site-tagline>SEEKING THE TRUTH</small></span></a>
+      <nav class="top-nav" aria-label="主导航"><a class="nav-destination" href="index.html">首页</a><a class="nav-destination" href="about.html">关于</a><button class="icon-button" data-theme-toggle aria-label="切换主题"><span data-theme-icon aria-hidden="true"></span></button></nav>
+    </div>
+  </header>
+
+  <main class="article-layout wrap">
+    <article class="article-shell">
+      <header class="article-head">
+        <a class="back-link" href="index.html"><span class="symbol symbol--arrow-back" aria-hidden="true"></span><span>返回文章列表</span></a>
+        <div class="article-kicker"><span class="cat-badge" id="cat">加载中</span><span id="log"></span></div>
+        <img class="article-cover" id="article-cover" alt="" hidden />
+        <h1 class="display-medium" id="title">正在加载文章…</h1>
+        <p class="article-desc body-large" id="desc"></p>
+        <div class="article-meta" id="meta"></div>
+      </header>
+
+      <div class="article-body" id="content"></div>
+
+      <div class="article-actions" id="article-actions" hidden>
+        <button class="like-button" data-like-button><span data-like-icon aria-hidden="true"><span class="symbol symbol--favorite"></span></span><span>喜欢</span><b data-like-count>0</b></button>
+        <button class="button button--tonal button--compact" data-share-button>分享</button>
+      </div>
+
+      <nav class="post-nav" data-post-nav></nav>
+
+      <section class="comments-section" data-comments-section>
+        <div class="section-heading section-heading--compact"><div><p class="eyebrow">评论</p><h2 class="headline-small">评论</h2></div></div>
+        <div data-comments></div>
+      </section>
+    </article>
+
+    <aside class="article-aside">
+      <div class="toc-card" data-toc-card hidden>
+        <span class="label-large">目录</span>
+        <nav class="toc" data-toc></nav>
+      </div>
+    </aside>
+  </main>
+
+  <button class="fab" data-back-to-top hidden aria-label="返回顶部" title="返回顶部"><span class="symbol symbol--arrow-up" aria-hidden="true"></span></button>
+  <footer class="site-footer"><div class="wrap site-footer__inner"><span class="body-small" data-copyright></span><div class="footer-links" data-social-links></div></div></footer>
+  <script type="module" src="assets/article.js"></script>
+</body>
+</html>
