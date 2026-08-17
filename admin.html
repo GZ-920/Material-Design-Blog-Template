@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="theme-color" content="#fffbfe" />
+  <title>管理工具 · 我的博客</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="admin" class="admin-body">
+  <div class="background-layer" aria-hidden="true"></div>
+  <header class="top-app-bar"><div class="top-app-bar__inner wrap-wide"><a href="index.html" class="brand"><img class="brand__logo" src="assets/icon.png" alt="" /><span class="brand__text"><strong>我的博客</strong><small>ADMIN</small></span></a><nav class="top-nav"><a class="nav-destination" href="index.html">返回网站</a><button class="icon-button" data-theme-toggle aria-label="切换主题"><span data-theme-icon aria-hidden="true"></span></button></nav></div></header>
+
+  <main class="admin-shell wrap-wide">
+    <header class="admin-header"><div><p class="eyebrow">管理</p><h1 class="display-small">博客管理</h1><p class="body-medium admin-lede">编辑站点、文章与主题。GitHub 写入权限只由你临时输入的 Fine-grained PAT 决定。</p></div><div class="status-pill" data-admin-status>未连接 GitHub</div></header>
+
+    <div class="admin-tabs" role="tablist"><button class="is-active" data-admin-tab="appearance">站点与外观</button><button data-admin-tab="posts">文章管理</button><button data-admin-tab="github">GitHub 同步</button><button data-admin-tab="diagnostics">部署检查</button></div>
+
+    <section class="admin-panel is-active" data-admin-panel="appearance">
+      <div class="admin-grid">
+        <form class="editor-card" id="config-form">
+          <div class="card-head"><div><p class="eyebrow">站点</p><h2 class="headline-small">站点配置</h2></div><button type="button" class="text-button" data-reset-config>重新载入</button></div>
+          <div class="field-grid">
+            <label><span>站点名称</span><input name="site.name" /></label><label><span>英文副标题</span><input name="site.tagline" /></label>
+            <label class="span-2"><span>首页大标题</span><textarea name="home.title" rows="2"></textarea></label><label class="span-2"><span>首页简介</span><textarea name="home.intro" rows="4"></textarea></label><label class="span-2"><span>首页标签（逗号分隔）</span><input name="home.chips" /></label>
+          </div>
+          <div class="form-actions"><button type="button" class="button button--filled" data-save-site disabled>保存到 GitHub</button><button type="button" class="button button--tonal" data-download-config>下载配置</button><span class="save-state" data-site-state></span></div>
+        </form>
+
+        <form class="editor-card">
+          <div class="card-head"><div><p class="eyebrow">主题</p><h2 class="headline-small">主题外观</h2></div></div>
+          <div class="field-grid"><label><span>默认主题</span><select name="theme.defaultMode"><option value="light">浅色</option><option value="dark">深色</option></select></label><label><span>备用种子色</span><input name="theme.seedColor" type="color" /></label></div>
+          <div class="form-actions"><button type="button" class="button button--filled" data-preview-config>应用到当前页面</button><button type="button" class="button button--filled" data-save-theme disabled>保存到 GitHub</button><span class="save-state" data-theme-state></span></div>
+        </form>
+
+        <div class="editor-card"><p class="eyebrow">评论</p><h2 class="headline-small">Giscus</h2><div class="field-grid single"><label class="switch-field"><span>启用评论</span><input data-giscus-enabled type="checkbox" /></label><label><span>Repository</span><input data-giscus-repo placeholder="用户名/仓库名" /></label><label><span>Repo ID</span><input data-giscus-repo-id /></label><label><span>Category</span><input data-giscus-category /></label><label><span>Category ID</span><input data-giscus-category-id /></label></div><div class="form-actions"><button class="button button--filled" type="button" data-save-giscus disabled>保存到 GitHub</button><span class="save-state" data-giscus-state></span></div></div>
+
+        <div class="editor-card"><p class="eyebrow">头图</p><h2 class="headline-small">首页头图轮播</h2><div class="field-grid single"><label class="switch-field"><span>启用轮播</span><input data-hero-enabled type="checkbox" /></label><label class="switch-field"><span>自动切换</span><input data-hero-autoplay type="checkbox" /></label><label><span>切换间隔（毫秒）</span><input data-hero-interval type="number" min="1000" step="500" /></label></div><div class="field-grid single"><label><span>添加图片直链（每行一个，可批量粘贴多行）</span><textarea data-hero-link rows="3" placeholder="https://example.com/pic1.jpg&#10;https://example.com/pic2.jpg"></textarea></label></div><div class="hero-upload-row"><button class="button button--tonal" type="button" data-hero-link-add>批量导入直链图片</button></div><div class="hero-upload-row"><input type="file" data-hero-file accept="image/jpeg,image/png,image/webp" multiple hidden><button class="button button--tonal" type="button" data-hero-upload>选择头图</button><span class="save-state" data-hero-upload-state></span></div><div class="hero-pending-list" data-hero-pending></div><div class="hero-upload-row" data-hero-pending-actions hidden><button class="button button--filled" type="button" data-hero-upload-save>确认添加</button></div><div class="hero-image-list" data-hero-list></div><div class="form-actions"><button class="button button--tonal" type="button" data-hero-add>添加图片路径</button><button class="button button--filled" type="button" data-save-hero disabled>保存轮播设置</button><span class="save-state" data-hero-state></span></div><p class="hint">"选择头图"会先在本地读取图片并自动取色（本地文件取色始终可靠）；每张图片可以留空表示提交到 GitHub 仓库（自动命名 images/head01.jpeg……），也可以自己填一个"实际加载 URL"，保存时就只写入这个外链地址、不上传图片本体到仓库。"批量导入直链图片"是不经过本地取色、直接按外链批量添加，取色是否成功取决于图床是否支持跨域（CORS）。可拖动排序，右侧色块可点击编辑取色。</p></div>
+
+        <div class="editor-card"><p class="eyebrow">公告</p><h2 class="headline-small">首页横幅公告</h2><div class="field-grid single"><label class="switch-field"><span>启用公告</span><input data-banner-enabled type="checkbox" /></label><label><span>背景样式</span><select data-banner-variant><option value="theme">主题色</option><option value="danger">红色</option></select></label><label class="switch-field"><span>显示关闭按钮</span><input data-banner-show-close type="checkbox" /></label><label><span>角标</span><input data-banner-label placeholder="公告" /></label><label><span>标题</span><input data-banner-title placeholder="欢迎访问…" /></label><label><span>内容</span><textarea data-banner-text rows="3" placeholder="公告内容…"></textarea></label><label><span>链接地址（可选）</span><input data-banner-link placeholder="https://…" /></label><label><span>链接文案</span><input data-banner-link-label placeholder="了解更多" /></label></div><div class="form-actions"><button class="button button--filled" type="button" data-save-banner disabled>保存到 GitHub</button><span class="save-state" data-banner-state></span></div></div>
+      </div>
+    </section>
+
+    <section class="admin-panel" data-admin-panel="posts"><div class="post-editor-layout"><aside class="post-list-card editor-card"><div class="card-head"><div><p class="eyebrow">文章</p><h2 class="headline-small">文章</h2></div><button class="icon-button" data-new-post title="新建文章" aria-label="新建文章"><span class="symbol symbol--add" aria-hidden="true"></span></button></div><div class="admin-post-list" data-admin-post-list></div></aside><div class="editor-card"><div class="card-head"><div><p class="eyebrow">编辑</p><h2 class="headline-small" data-editor-heading>选择一篇文章</h2></div><span class="save-state" data-save-state></span></div><div class="field-grid post-meta-grid"><label><span>Slug / 文件名</span><input data-post-file placeholder="hello" /></label><label><span>分类代码</span><select data-post-cat><option value="music">music</option><option value="essay">essay</option><option value="tech">tech</option></select></label><label class="span-2"><span>标题</span><input data-post-title /></label><label class="span-2"><span>摘要</span><textarea data-post-desc rows="2"></textarea></label><label><span>分类显示名</span><input data-post-category /></label><label><span>日期</span><input data-post-date type="date" /></label><label><span>预计阅读</span><input data-post-time placeholder="5 min" /></label><label><span>主页封面</span><div class="post-cover-editor" data-cover-editor="home"><div class="post-cover-row"><input data-post-cover-home placeholder="留空则上传到 images/，或填实际加载 URL" /><input type="color" data-post-cover-home-color title="点击编辑取色" /><button class="button button--tonal" type="button" data-cover-choose="home">选择本地图片</button><input type="file" data-cover-file="home" accept="image/jpeg,image/png,image/webp" hidden></div><div class="post-cover-pending" data-cover-pending="home"></div><div class="post-cover-current" data-cover-current="home"></div></div></label><label><span>文内头图</span><div class="post-cover-editor" data-cover-editor="article"><div class="post-cover-row"><input data-post-cover-article placeholder="留空则上传到 images/，或填实际加载 URL" /><input type="color" data-post-cover-article-color title="点击编辑取色" /><button class="button button--tonal" type="button" data-cover-choose="article">选择本地图片</button><input type="file" data-cover-file="article" accept="image/jpeg,image/png,image/webp" hidden></div><div class="post-cover-pending" data-cover-pending="article"></div><div class="post-cover-current" data-cover-current="article"></div></div></label><label class="switch-field"><span>首页精选</span><input data-post-featured type="checkbox" /></label><label class="span-2"><span>标签（逗号分隔）</span><input data-post-tags /></label></div><div class="editor-split"><label class="markdown-editor"><span>Markdown</span><textarea data-markdown spellcheck="false" placeholder="# 标题\n\n开始写作…"></textarea></label><div class="markdown-preview article-body" data-markdown-preview><p class="placeholder-copy">预览会显示在这里。</p></div></div><div class="form-actions"><button class="button button--filled" data-save-post-local>保存到编辑会话</button><button class="button button--tonal" data-download-post>下载 .md</button><button class="button button--tonal" data-download-posts-json>下载 posts.json</button><button class="button button--filled" data-push-post disabled>提交到 GitHub</button><button class="button button--danger" data-delete-post disabled>删除文章</button></div></div></div></section>
+
+    <section class="admin-panel" data-admin-panel="github"><div class="admin-grid two-col"><form class="editor-card" id="github-form"><p class="eyebrow">仓库</p><h2 class="headline-small">连接 GitHub</h2><div class="field-grid single"><label><span>Owner</span><input data-gh-owner /></label><label><span>Repository</span><input data-gh-repo /></label><label><span>Branch</span><input data-gh-branch value="main" /></label><label><span>Fine-grained PAT</span><input data-gh-token type="password" autocomplete="off" placeholder="github_pat_…" /></label><label class="switch-field"><span>记住凭据（保存在本机浏览器）</span><input data-gh-remember type="checkbox" checked /></label></div><p class="hint">建议只授予当前仓库 Contents: Read and write。令牌默认保存在本机 localStorage，仅在提交时用于认证；请勿在公共设备上勾选记住凭据。</p><div class="form-actions"><button class="button button--filled" type="button" data-gh-test>测试连接</button><button class="button button--tonal" type="button" data-push-config disabled>提交站点配置</button></div></form><div class="editor-card"><p class="eyebrow">权限</p><h2 class="headline-small">访问密码与边界</h2><div class="field-grid single"><label><span>管理密码（可选）</span><input data-admin-password type="password" autocomplete="off" placeholder="留空则不修改当前密码" /></label></div><p class="hint">设置后进入本后台需输入密码。此密码保存在 site.config.json（静态站点为轻量保护，非强安全机制）。</p><div class="prose-small"><p>管理页本身不是完整登录系统；真正的写入权限来自 GitHub 令牌。</p></div><div class="form-actions"><button class="button button--filled" type="button" data-save-password disabled>保存密码</button><span class="save-state" data-password-state></span></div></div></div></section>
+
+    <section class="admin-panel" data-admin-panel="diagnostics"><div class="editor-card"><p class="eyebrow">检查</p><h2 class="headline-small">部署检查</h2><div class="diagnostic-list" data-diagnostics></div><div class="form-actions"><button class="button button--filled" data-run-diagnostics>重新检查</button><a class="button button--tonal" href="CONFIGURATION.md" target="_blank">配置文档</a></div></div></section>
+  </main>
+  <div class="admin-lock" data-admin-lock hidden>
+    <div class="admin-lock__card">
+      <span class="admin-lock__icon" aria-hidden="true"><span class="symbol symbol--lock"></span></span>
+      <h2 class="headline-small">输入管理密码</h2>
+      <p class="admin-lock__hint">本博客后台已启用密码保护。</p>
+      <input class="admin-lock__input" type="password" data-lock-password autocomplete="current-password" placeholder="管理密码" />
+      <div class="admin-lock__actions">
+        <button class="button button--filled" type="button" data-lock-unlock>解锁</button>
+        <a class="button button--tonal" href="index.html">返回网站</a>
+      </div>
+      <p class="save-state" data-lock-error></p>
+    </div>
+  </div>
+  <div class="toast" data-toast role="status" aria-live="polite"></div>
+  <script type="module" src="assets/admin.js"></script>
+</body>
+</html>
