@@ -1,0 +1,142 @@
+{
+  "site": {
+    "name": "我的博客",
+    "shortName": "博客",
+    "tagline": "YOUR TAGLINE",
+    "author": "你的名字",
+    "description": "一个基于 Material 3 的个人博客。",
+    "language": "zh-CN",
+    "copyright": "© 2026 你的名字",
+    "email": ""
+  },
+  "home": {
+    "eyebrow": "个人博客",
+    "title": "记录所见，\n分享所思。",
+    "intro": "在这里分享文章、作品、技术记录与个人思考。",
+    "chips": [
+      "技术",
+      "随笔",
+      "创作"
+    ]
+  },
+  "banner": {
+    "enabled": true,
+    "variant": "theme",
+    "showClose": true,
+    "label": "公告",
+    "title": "",
+    "message": "",
+    "link": "",
+    "linkLabel": ""
+  },
+  "theme": {
+    "defaultMode": "system",
+    "dynamicColor": true,
+    "seedColor": "#6750A4",
+    "source": "background",
+    "background": {
+      "enabled": true,
+      "image": "images/background.jpeg",
+      "position": "center center",
+      "size": "cover",
+      "blur": 18,
+      "opacityLight": 0.055,
+      "opacityDark": 0.07,
+      "overlayLight": 0.9,
+      "overlayDark": 0.9
+    },
+    "heroCarousel": {
+      "enabled": true,
+      "autoplay": true,
+      "interval": 3000,
+      "images": [
+        {
+          "src": "https://esaimg.cdn1.vip/i/6a82dd9edc7de_1786961310.webp",
+          "color": "#6e86a8"
+        },
+        {
+          "src": "https://esaimg.cdn1.vip/i/6a82dd4173f8f_1786961217.webp",
+          "color": "#6591b4"
+        },
+        {
+          "src": "https://esaimg.cdn1.vip/i/6a82dd978ca70_1786961303.webp",
+          "color": "#819c7f"
+        },
+        {
+          "src": "https://esaimg.cdn1.vip/i/6a82dd9973cdd_1786961305.webp",
+          "color": "#899789"
+        },
+        {
+          "src": "https://esaimg.cdn1.vip/i/6a82dd9ad6bfd_1786961306.webp",
+          "color": "#e5ccdc"
+        },
+        {
+          "src": "https://esaimg.cdn1.vip/i/6a82dda10c095_1786961313.webp",
+          "color": "#9992a5"
+        },
+        {
+          "src": "https://esaimg.cdn1.vip/i/6a82dda453150_1786961316.webp",
+          "color": "#a9cde0"
+        },
+        {
+          "src": "https://esaimg.cdn1.vip/i/6a82dda5ba255_1786961317.webp",
+          "color": "#937ea5"
+        },
+        {
+          "src": "https://esaimg.cdn1.vip/i/6a82ddaf2f72e_1786961327.webp",
+          "color": "#9fb4b2"
+        },
+        {
+          "src": "https://esaimg.cdn1.vip/i/6a82ddb08b1ef_1786961328.webp",
+          "color": "#a982b3"
+        },
+        {
+          "src": "https://esaimg.cdn1.vip/i/6a82ddb171941_1786961329.webp",
+          "color": "#98c5c5"
+        },
+        {
+          "src": "https://esaimg.cdn1.vip/i/6a82dea81a4bf_1786961576.webp",
+          "color": "#cdc7d7"
+        },
+        {
+          "src": "https://esaimg.cdn1.vip/i/6a82dda29459f_1786961314.webp",
+          "color": "#9c98ab"
+        }
+      ]
+    }
+  },
+  "features": {
+    "search": true,
+    "pwa": true,
+    "readingProgress": true,
+    "toc": true,
+    "share": true,
+    "backToTop": true
+  },
+  "likes": {
+    "enabled": true,
+    "mode": "auto",
+    "endpoint": "/api/likes"
+  },
+  "comments": {
+    "enabled": false,
+    "provider": "giscus",
+    "repo": "",
+    "repoId": "",
+    "category": "",
+    "categoryId": "",
+    "mapping": "specific",
+    "reactionsEnabled": "1",
+    "emitMetadata": "0",
+    "inputPosition": "top",
+    "lang": "zh-CN",
+    "loading": "lazy"
+  },
+  "social": [],
+  "admin": {
+    "githubOwner": "",
+    "githubRepo": "",
+    "githubBranch": "main",
+    "password": ""
+  }
+}
