@@ -1,0 +1,10 @@
+{
+  "name": "我的博客",
+  "short_name": "博客",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fffbfe",
+  "theme_color": "#6750A4",
+  "lang": "zh-CN",
+  "icons": [{"src":"assets/icon.png","sizes":"2048x2048","type":"image/png","purpose":"any maskable"}]
+}
