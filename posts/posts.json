@@ -1,0 +1,19 @@
+[
+  {
+    "file": "welcome",
+    "cat": "essay",
+    "category": "随笔",
+    "log": "POST",
+    "title": "欢迎使用这个博客模板",
+    "desc": "这是一个示例文章，用来展示文章页、Markdown、目录和主题色功能。",
+    "date": "2026-01-01",
+    "time": "1 min",
+    "coverHome": "images/cover01.jpeg",
+    "coverArticle": "images/cover01.jpeg",
+    "cover": "images/cover01.jpeg",
+    "coverColorHome": "",
+    "coverColorArticle": "",
+    "featured": true,
+    "tags": ["模板", "Markdown"]
+  }
+]
